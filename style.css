@@ -1,0 +1,216 @@
+* {
+  scroll-behavior: smooth;
+    font-family: "Alexandria", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.one {
+  background-color: lch(0% 0 0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5px;
+}
+
+.one-two a {
+  color: white;
+  padding: 0px 20px;
+  text-decoration: none;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.logo {
+  width: 80px;
+  border-radius: 10px;
+  padding-left: 20px;
+}
+
+.blabla {
+  width: 200px;
+}
+
+.one-two a:hover {
+  background-color: #2600ff;
+}
+
+button {
+  background-color: #2600ff;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 15px;
+  align-items: center;
+}
+
+.one-two input {
+  border-radius: 40px;
+  margin: 15px;
+  outline: none;
+  border: none;
+  text-align: center;
+height: 20px;
+}
+
+.three {
+  background-image: url("Shopping\ cart\ in\ blur\ supermarket\ background\ _\ Premium\ Photo.jpg");
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.three img {
+  border-radius: 60px;
+  border-image: round;
+  border: solid 10px;
+  border-color: black;
+  margin: 30px 0px 30px 10px;
+}
+
+h1 {
+  text-align: center;
+  border: 20px;
+  color: #000000;
+  border-radius: 100px;
+  border: 10px 10px 10px 10px;
+  background-color: #ffffff;
+}
+
+h1 button {
+  display: flex;
+}
+
+.open {
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.product {
+  background-color: #eee;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 4px;
+}
+
+.text {
+  background: none;
+  border-radius: 20px;
+  color: hsl(0, 0%, 0%);
+  direction: rtl;
+  text-align: center;
+  right: 50%;
+
+  font-weight: bold;
+}
+
+body {
+  background-image: url("market.jpg");
+
+  margin: 0px;
+}
+
+.close {
+  width: 50%;
+}
+
+#الموقع {
+  padding: 0 50%;
+  color: #000000;
+}
+
+.footer {
+  background-image: url(k.jpg);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 0px;
+}
+
+.footer .social-icons {
+  margin: 10px 0;
+}
+
+.footer .social-icons img {
+  width: 40px;
+  margin: 0 10px;
+  transition: transform 0.3s;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+.footer .social-icons img:hover {
+  transform: scale(1.2);
+  background-color: darkgray;
+  border-radius: 20px;
+}
+
+hr {
+  background-color: #ffffff;
+  margin: 0%;
+}
+
+.products {
+  display: flex; /* تخلي العناصر جنب بعض */
+  justify-content: center; /* توزيع متساوي في النص */
+  gap: 20px; /* مسافة بين الصور */
+  flex-wrap: wrap; /* يخليهم ينزلوا سطر جديد لو الشاشة صغيرة */
+  padding: 10px;
+
+  margin-top: 20px;
+}
+
+.item {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  width: 150px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+/* بيخلي الصوره تكبر وتدي لون في الخلفيه لما الماوس ييجي عليها */
+
+.item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #ccc;
+}
+
+.item img {
+  width: 100%;
+}
+.item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  width: 155px; /* عرض كل منتج */
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.item img {
+  width: 100%;
+  height: 200px;
+}
+
+.price {
+  width: 200px;
+  height: 200px;
+}
+
+@media (max-width: 768px) {
+  /* تغييرات للشاشات الصغيرة */
+}
+
+@media (min-width: 768px) {
+}
+
+
+
