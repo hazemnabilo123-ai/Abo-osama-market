@@ -1,6 +1,6 @@
 * {
   scroll-behavior: smooth;
-    font-family: "Alexandria", sans-serif;
+  font-family: "Alexandria", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -52,7 +52,7 @@ button {
   outline: none;
   border: none;
   text-align: center;
-height: 20px;
+  height: 20px;
 }
 
 .three {
@@ -62,7 +62,6 @@ height: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
 }
 
 .three img {
@@ -212,5 +211,62 @@ hr {
 @media (min-width: 768px) {
 }
 
+.sahm {
+  position: fixed;
+
+  z-index: 1000;
+  left: 93%;
+  top: 90%;
+  background-color: rgba(255, 255, 255, 0.686);
+  border-radius: 20px;
+}
 
 
+
+/** تجربه**/
+
+/* الروابط */
+.navbar a {
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* القائمة المنسدلة */
+.dropdown {
+  position: relative;
+  display: inline-block;
+direction: rtl;
+
+}
+
+/* محتوى القائمة */
+.dropdown-content {
+  display: none;
+  position: absolute;
+ 
+  min-width: 160px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.693);
+  z-index: 1;
+  border-radius: 6px;
+  
+}
+
+/* عناصر القائمة */
+.dropdown-content a {
+  color: #33827b;
+  padding: 20px;
+  display: block;
+
+}
+
+/* عند تمرير الماوس */
+.dropdown-content a:hover {
+  background-color: #000000;
+}
+
+/* إظهار القائمة عند المرور */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
