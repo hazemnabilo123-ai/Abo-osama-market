@@ -237,7 +237,7 @@ hr {
 .dropdown {
   position: relative;
   display: inline-block;
-direction: rtl;
+
 
 }
 
@@ -249,24 +249,27 @@ direction: rtl;
   min-width: 160px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.693);
   z-index: 1;
-  border-radius: 6px;
-  
+ 
+ 
 }
 
 /* عناصر القائمة */
 .dropdown-content a {
-  color: #33827b;
+  color: #000000;
   padding: 20px;
   display: block;
-
+background: #ffffff;
+direction: rtl;
 }
 
 /* عند تمرير الماوس */
 .dropdown-content a:hover {
-  background-color: #000000;
+  background-color: #2a757a;
+  
 }
 
 /* إظهار القائمة عند المرور */
 .dropdown:hover .dropdown-content {
   display: block;
+
 }
