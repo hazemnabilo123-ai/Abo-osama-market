@@ -37,7 +37,7 @@
   background-color: #2600ff;
 }
 
-button {
+.one button {
   background-color: #2600ff;
   color: white;
   border: none;
@@ -204,13 +204,6 @@ hr {
   height: 200px;
 }
 
-@media (max-width: 768px) {
-  /* تغييرات للشاشات الصغيرة */
-}
-
-@media (min-width: 768px) {
-}
-
 .sahm {
   position: fixed;
 
@@ -220,8 +213,6 @@ hr {
   background-color: rgba(255, 255, 255, 0.686);
   border-radius: 20px;
 }
-
-
 
 /** تجربه**/
 
@@ -237,20 +228,16 @@ hr {
 .dropdown {
   position: relative;
   display: inline-block;
-
-
 }
 
 /* محتوى القائمة */
 .dropdown-content {
   display: none;
   position: absolute;
- 
+
   min-width: 160px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.693);
   z-index: 1;
- 
- 
 }
 
 /* عناصر القائمة */
@@ -258,18 +245,92 @@ hr {
   color: #000000;
   padding: 20px;
   display: block;
-background: #ffffff;
-direction: rtl;
+  background: #ffffff;
+  direction: rtl;
+  border-radius: 0px;
 }
 
 /* عند تمرير الماوس */
 .dropdown-content a:hover {
   background-color: #2a757a;
-  
 }
 
 /* إظهار القائمة عند المرور */
 .dropdown:hover .dropdown-content {
   display: block;
-
 }
+
+/*الجزء الخاص بالبنر */
+
+    .slider {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    /* الخلفية الضبابية */
+    .blur-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      filter: blur(20px);
+      transform: scale(1.1); /* عشان الحواف متبانش مقصوصة */
+      transition: background-image 1s ease-in-out;
+      z-index: 0;
+    }
+
+    /* الصور الأمامية */
+    .slider img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: contain; /* عشان الصورة كلها تبان */
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      z-index: 1;
+    }
+
+    .slider img.active {
+      opacity: 1;
+    }
+
+    /* الأزرار */
+    .controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 15px;
+      z-index: 2;
+    }
+
+    .controls button {
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      font-size: 25px;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    .controls button:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+      /* زر إضافة داخل المنتج (للناس اللي مش عايزه تضغط على المنتج نفسه) */
+      .add-to-cart{display:inline-block;margin-top:6px;padding:6px 8px;border-radius:8px;background:#ff6f00;color:#fff;border:none;cursor:pointer;font-weight:800}
+
+      /* responsive */
+      @media (max-width:600px){.one{padding:10px}.cart-panel{width:100%}}

@@ -22,16 +22,19 @@
   <body>
     <div id="top" class="one">
       <img class="logo" src="لوجو.jpg" />
-      <div class="one-two">
-        <button class="searchBtn"><a href="#المنتجات"> بحث </a></button>
-        <input
+                <button class="cart-btn" id="cartToggle" aria-label="فتح سلة المشتريات">
+          <!-- simple SVG cart -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-13z"></path><circle cx="9" cy="20" r="1"></circle><circle cx="19" cy="20" r="1"></circle></svg>
+          <span class="badge" id="cartCount">0</span>
+        </button>
+              <input
           class="searching"
           type="text"
           dir="rtl"
           placeholder="ابحث"
           maxlength="15"
         />
-
+      <div class="one-two">
         <a href="#تواصل معنا ">تواصل معنا</a>
         <a href="#الموقع">الموقع</a>
         <div class="dropdown">
@@ -40,11 +43,15 @@
             <a href="#">الالبان</a>
             <a href="#">مشتقات الالبان</a>
             <a href="#">المعلبات</a>
-            <a href="#">زيتوت و خل</a>
+            <a href="#">زيوت و خل</a>
             <a href="#"> </a>
           </div>
+          
         </div>
         <a href="#العروض"> العروض</a>
+       
+  
+
       </div>
     </div>
 
@@ -76,6 +83,8 @@
     <hr />
     <hr />
     <a href="#top"><img class="sahm" src="سهم.png" alt="سهم" /></a>
+\
+
     <!--الجزء الخاص ب المنتجات-->
 
     <h1 id="المنتجات">المنتجات</h1>
@@ -86,6 +95,7 @@
         <p>جبنة رودس شيدر 1/8</p>
         <hr />
         <p>سعر المنتج: 13 جنيه</p>
+         <button class="add-to-cart">أضف للسلة</button>
       </div>
 
       <div class="item">
@@ -1324,6 +1334,304 @@
         <hr />
         <p>سعر المنتج: 5 جنيه</p>
           
+      </div>
+
+      <div class="item">
+        <img src="item two/ببسي 1لتر.png" />
+        <p>ببسي 1لتر</p>
+        <hr />
+        <p>سعر المنتج: 30 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/ببسي 1لتر.png" />
+        <p>ببسي 2لتر</p>
+        <hr />
+        <p>سعر المنتج: 35 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/كولا1لتر.png" />
+        <p>كولا1لتر</p>
+        <hr />
+        <p>سعر المنتج: 30 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/كولا1لتر.png" />
+        <p>كولا 2لتر</p>
+        <hr />
+        <p>سعر المنتج: 35 جنيه</p>
+      </div>
+      <div class="item">
+        <img src="item two/شويبس 1لتر.png" />
+        <p>شويبس 1لتر</p>
+        <hr />
+        <p>سعر المنتج: 30 جنيه</p>
+      </div>
+      <div class="item">
+        <img src="item two/شويبس 1لتر.png" />
+        <p>شويبس 2لتر</p>
+        <hr />
+        <p>سعر المنتج: 35 جنيه</p>
+      </div>
+      <div class="item">
+        <img src="item two/فيروز 1لتر.png" />
+        <p>فيروز 1لتر</p>
+        <hr />
+        <p>سعر المنتج: 30 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/كنوز ب10.png" />
+        <p>كنوز</p>
+        <hr />
+        <p>سعر المنتج: 10 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/فيجيتار.png" />
+        <p>فيجيتار</p>
+        <hr />
+        <p>سعر المنتج: 5 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/كاستر.png" />
+        <p>كاستر</p>
+        <hr />
+        <p>سعر المنتج: 15 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/خلطه بشاميل.png" />
+        <p>خلطه بشاميل</p>
+        <hr />
+        <p>سعر المنتج: 20 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/كريم شانتيه.png" />
+        <p>كريم شانتيه</p>
+        <hr />
+        <p>سعر المنتج: 20 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/بيكنج بودر.png" />
+        <p>بيكنج بودر</p>
+        <hr />
+        <p>سعر المنتج: 7 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/فانليا.png" />
+        <p>فانليا</p>
+        <hr />
+        <p>سعر المنتج: 1 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/كيك شيف.png" />
+        <p>كيك شيف</p>
+        <hr />
+        <p>سعر المنتج: 7 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/خميره فوريه.png" />
+        <p>خميره فوريه</p>
+        <hr />
+        <p>سعر المنتج: 5 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/صلصه ظرف.png" />
+        <p>صلصه ظرف</p>
+        <hr />
+        <p>سعر المنتج: 3 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/لبن المراعي 1لتر.png" />
+        <p>لبن المراعي 1لتر</p>
+        <hr />
+        <p>سعر المنتج: 50 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/ذبادو كبير.png" />
+        <p>زبادو صغير</p>
+        <hr />
+        <p>سعر المنتج: 20 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/ذبادو كبير.png" />
+        <p>زبادو كبير</p>
+        <hr />
+        <p>سعر المنتج: 30 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/رايب كبير.png" />
+        <p>رايب كبير</p>
+        <hr />
+        <p>سعر المنتج: 30 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/رايب كبير.png" />
+        <p>رايب صغير</p>
+        <hr />
+        <p>سعر المنتج: 20 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/عصير بيتي ص.png" />
+        <p>عصير بيتي ص</p>
+        <hr />
+        <p>سعر المنتج: 10 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/عصير كل يوم.png" />
+        <p>عصير كل يوم</p>
+        <hr />
+        <p>سعر المنتج: 5 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/مكس المراعي.png" />
+        <p>مكس المراعي</p>
+        <hr />
+        <p>سعر المنتج: 15 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/لبن المراعي 200ملل.png" />
+        <p>لبن المراعي 200ملل</p>
+        <hr />
+        <p>سعر المنتج: 13 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/فرجللو.png" />
+        <p>فرجللو</p>
+        <hr />
+        <p>سعر المنتج: 5 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/بيتي بلس ص.png" />
+        <p>بيتي بلس ص</p>
+        <hr />
+        <p>سعر المنتج: 12 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/عصير بيست.png" />
+        <p>عصير بيست</p>
+        <hr />
+        <p>سعر المنتج: 7 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/دانون ص.png" />
+        <p>دانون ص</p>
+        <hr />
+        <p>سعر المنتج: 6 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/دانيت شيكولاته.png" />
+        <p>دانيت شيكولاته</p>
+        <hr />
+        <p>سعر المنتج: 6 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/ذبادى المراعي ص.png" />
+        <p>ذبادى المراعي ص</p>
+        <hr />
+        <p>سعر المنتج: 6 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/ذبادى المراعي 170جم.png" />
+        <p>ذبادى المراعي 170جم</p>
+        <hr />
+        <p>سعر المنتج: 13 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/لبن بخيره 12.png" />
+        <p>لبن بخيره 1/2</p>
+        <hr />
+        <p>سعر المنتج: 22 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/مشروب كابري.png" />
+        <p>مشروب كابري</p>
+        <hr />
+        <p>سعر المنتج: 15 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="item two/نسكافيه 31 شوت.png" />
+        <p>نسكافيه 3*1 شوت</p>
+        <hr />
+        <p>سعر المنتج: 3 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="" />
+        <p></p>
+        <hr />
+        <p>سعر المنتج: 0 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="" />
+        <p></p>
+        <hr />
+        <p>سعر المنتج: 0 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="" />
+        <p></p>
+        <hr />
+        <p>سعر المنتج: 0 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="" />
+        <p></p>
+        <hr />
+        <p>سعر المنتج: 0 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="" />
+        <p></p>
+        <hr />
+        <p>سعر المنتج: 0 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="" />
+        <p></p>
+        <hr />
+        <p>سعر المنتج: 0 جنيه</p>
+      </div>
+
+      <div class="item">
+        <img src="" />
+        <p></p>
+        <hr />
+        <p>سعر المنتج: 0 جنيه</p>
       </div>
     </div>
     <hr />
