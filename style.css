@@ -4,6 +4,7 @@
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+
 }
 
 .one {
@@ -12,6 +13,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
 }
 
 .one-two a {
@@ -38,7 +44,7 @@
 }
 
 .one button {
-  background-color: #2600ff;
+  background-color: #15c3a39a;
   color: white;
   border: none;
   border-radius: 15px;
@@ -58,7 +64,7 @@
 .three {
   background-image: url("Shopping\ cart\ in\ blur\ supermarket\ background\ _\ Premium\ Photo.jpg");
   background-size: cover;
-
+  padding-top: 150px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -164,15 +170,6 @@ hr {
   margin-top: 20px;
 }
 
-.item {
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 10px;
-  width: 150px;
-  text-align: center;
-  transition: 0.3s;
-}
-
 /* بيخلي الصوره تكبر وتدي لون في الخلفيه لما الماوس ييجي عليها */
 
 .item:hover {
@@ -180,10 +177,9 @@ hr {
   box-shadow: 0 0 10px #ccc;
 }
 
-.item img {
-  width: 100%;
-}
 .item {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* صورة/محتوى/زر */
   background-color: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 10px;
@@ -192,8 +188,24 @@ hr {
   width: 155px; /* عرض كل منتج */
   font-size: 20px;
   font-weight: bold;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  width: 150px;
+  text-align: center;
+  transition: 0.3s;
 }
-
+.products .item .add-to-cart {
+  justify-self: center;
+  width: 86%;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: #15c3a3;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 800;
+}
 .item img {
   width: 100%;
   height: 200px;
@@ -202,16 +214,6 @@ hr {
 .price {
   width: 200px;
   height: 200px;
-}
-
-.sahm {
-  position: fixed;
-
-  z-index: 1000;
-  left: 93%;
-  top: 90%;
-  background-color: rgba(255, 255, 255, 0.686);
-  border-radius: 20px;
 }
 
 /** تجربه**/
@@ -224,113 +226,204 @@ hr {
   display: inline-block;
 }
 
-/* القائمة المنسدلة */
-.dropdown {
-  position: relative;
+
+
+/* زر إضافة داخل المنتج (للناس اللي مش عايزه تضغط على المنتج نفسه) */
+.add-to-cart {
   display: inline-block;
+  margin-top: 6px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: #ff6f00;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 800;
 }
 
-/* محتوى القائمة */
-.dropdown-content {
-  display: none;
+
+
+/* responsive */
+@media (max-width: 600px) {
+  .one {
+    padding: 10px;
+  }
+  .cart-panel {
+    width: 100%;
+  }
+}
+
+
+
+
+/* === أساسي من style.css مع تحسينات للسلة === */
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Alexandria", sans-serif;
+}
+
+.logo {
+  width: 80px;
+  border-radius: 10px;
+}
+.one-two {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.one-two a {
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+.searching {
+  border-radius: 40px;
+  padding: 8px 14px;
+  border: none;
+  outline: none;
+  height: 36px;
+  text-align: center;
+}
+
+/* ----- أيقونة السلة ----- */
+.cart-btn {
+  position: relative;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 6px;
+}
+
+.cart-btn .badge {
   position: absolute;
-
-  min-width: 160px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.693);
-  z-index: 1;
+  top: -6px;
+  left: -6px;
+  background: #ff3b30;
+  color: #fff;
+  border-radius: 50%;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: 700;
 }
 
-/* عناصر القائمة */
-.dropdown-content a {
-  color: #000000;
-  padding: 20px;
-  display: block;
-  background: #ffffff;
+/* سلة جانبية */
+.cart-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 340px;
+  max-width: 95%;
+  background: #fff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  transform: translateX(110%);
+  transition: transform 0.28s ease-in-out;
+  z-index: 2000;
   direction: rtl;
-  border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 90px; /* حل مشكلة الهيدر الثابت */
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 340px;
+  max-width: 95%;
+  background: #fff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  transform: translateX(110%);
+  transition: transform 0.28s ease-in-out;
+  z-index: 2000;
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+}
+.cart-panel.open {
+  transform: translateX(0);
+}
+.cart-header {
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cart-header h3 {
+  margin: 0;
+}
+.cart-items {
+  flex: 1;
+  overflow: auto;
+  padding: 12px;
+}
+.cart-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 10px 0;
+}
+.cart-item img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.cart-item .meta {
+  flex: 1;
+}
+.cart-item .meta p {
+  margin: 0;
+  font-weight: 700;
+}
+.cart-footer {
+  padding: 12px;
+  border-top: 1px solid #eee;
+}
+.checkout-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #2e7d32;
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
 }
 
-/* عند تمرير الماوس */
-.dropdown-content a:hover {
-  background-color: #2a757a;
+/* تحسين عرض المنتجات */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  padding: 10px;
 }
-
-/* إظهار القائمة عند المرور */
-.dropdown:hover .dropdown-content {
-  display: block;
+.item {
+  width: 155px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
 }
-
-/*الجزء الخاص بالبنر */
-
-    .slider {
-      position: relative;
-      width: 100%;
-      max-width: 800px;
-      height: 450px;
-      overflow: hidden;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-    }
-
-    /* الخلفية الضبابية */
-    .blur-bg {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      filter: blur(20px);
-      transform: scale(1.1); /* عشان الحواف متبانش مقصوصة */
-      transition: background-image 1s ease-in-out;
-      z-index: 0;
-    }
-
-    /* الصور الأمامية */
-    .slider img {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      object-fit: contain; /* عشان الصورة كلها تبان */
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-      z-index: 1;
-    }
-
-    .slider img.active {
-      opacity: 1;
-    }
-
-    /* الأزرار */
-    .controls {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-      padding: 0 15px;
-      z-index: 2;
-    }
-
-    .controls button {
-      background: rgba(0, 0, 0, 0.5);
-      border: none;
-      color: white;
-      font-size: 25px;
-      padding: 10px 15px;
-      cursor: pointer;
-      border-radius: 50%;
-      transition: 0.3s;
-    }
-
-    .controls button:hover {
-      background: rgba(255, 255, 255, 0.3);
-    }
-
-      /* زر إضافة داخل المنتج (للناس اللي مش عايزه تضغط على المنتج نفسه) */
-      .add-to-cart{display:inline-block;margin-top:6px;padding:6px 8px;border-radius:8px;background:#ff6f00;color:#fff;border:none;cursor:pointer;font-weight:800}
-
-      /* responsive */
-      @media (max-width:600px){.one{padding:10px}.cart-panel{width:100%}}
+.item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+.item img {
+  width: 100%;
+  height: 140px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+.item p {
+  margin: 8px 0 6px;
+  font-weight: 700;
+}
