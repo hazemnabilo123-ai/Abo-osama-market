@@ -1,6 +1,6 @@
       // === دمج مع كود البحث السابق (بسيط) ===
       const searchInput = document.querySelector('.searching');
-      const products = document.querySelectorAll('#products .item');
+      const products = document.querySelectorAll('.item');
 
       searchInput.addEventListener('input', function(){
         const input = this.value.trim().toLowerCase();
